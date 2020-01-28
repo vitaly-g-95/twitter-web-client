@@ -5,9 +5,9 @@ import routes from '../routes';
 const Navbar = ({ children }) => (
   <nav className="navbar navbar-expand navbar-light bg-light mb-4">
     <ul className="navbar-nav mr-auto">
-      {routes.map(({ exact, path, name }) => (
+      {routes.map(({ exact, path, name }, i) => (
         <li
-          key={path}
+          key={i}
           className="nav-item"
         >
           <NavLink
