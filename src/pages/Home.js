@@ -1,10 +1,11 @@
 import React from 'react';
+import Page from './Page';
 
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <Page title="Last Tweets">
+      
+    </Page>
   );
 };
 

@@ -1,10 +1,11 @@
 import React from 'react';
+import Page from './Page';
 
 const Search = () => {
   return (
-    <div>
-      Search
-    </div>
+    <Page title="Search">
+      
+    </Page>
   );
 };
 
