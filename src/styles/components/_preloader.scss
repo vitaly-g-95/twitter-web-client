@@ -1,0 +1,13 @@
+.preloader {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-width: 16px;
+  border-style: solid;
+  border-top-color: theme-color('primary');
+  border-right-color: theme-color('success');
+  border-bottom-color: theme-color('warning');
+  border-left-color: theme-color('danger');
+  border-radius: 50%;
+  animation: spin 0.4s linear infinite;
+}

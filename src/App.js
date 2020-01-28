@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import routes from './routes';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import InlineForm from './components/InlineForm';
 
@@ -22,7 +23,7 @@ const App = ({ history }) => {
         />
       </Navbar>
 
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<Preloader />}>
         <Switch>
           {routes.map(({ exact, path, component }, i) => (
             <Route
