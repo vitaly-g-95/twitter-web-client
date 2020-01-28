@@ -1,10 +1,17 @@
 import React, { Suspense, lazy } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import routes from './routes';
 import Navbar from './components/Navbar';
 import InlineForm from './components/InlineForm';
 
-const App = () => {
+const App = ({ history }) => {
+  const search = q => {
+    history.push({
+      pathname: '/search',
+      search: `?q=${q}`
+    });
+  };
+
   return (
     <div className="container py-5">
       <Navbar>
@@ -31,4 +38,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default withRouter(App);
