@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const InlineForm = ({ inputName, buttonText, onSubmit }) => {
-  const [value, setValue] = useState('');
+const InlineForm = ({
+  inputName,
+  inputValue,
+  buttonText,
+  onSubmit
+}) => {
+  const [value, setValue] = useState(inputValue);
 
   const onChange = e => {
     setValue(e.target.value);
@@ -20,6 +25,7 @@ const InlineForm = ({ inputName, buttonText, onSubmit }) => {
         type="text"
         className="form-control"
         name={inputName}
+        value={value}
         onChange={onChange}
       />
       <div className="input-group-append">
@@ -34,7 +40,12 @@ const InlineForm = ({ inputName, buttonText, onSubmit }) => {
 InlineForm.propTypes = {
   inputName: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  inputValue: PropTypes.string
+};
+
+InlineForm.defaultProps = {
+  inputValue: ''
 };
 
 export default InlineForm;
