@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const InlineForm = ({ buttonText, onSubmit }) => (
+const InlineForm = ({ inputName, buttonText, onSubmit }) => (
   <form className="input-group" onSubmit={onSubmit}>
-    <input type="text" className="form-control" name="q" />
+    <input
+      type="text"
+      className="form-control"
+      name={inputName}
+    />
     <div className="input-group-append">
       <button className="btn btn-primary" type="submit">
         {buttonText}
@@ -13,6 +17,7 @@ const InlineForm = ({ buttonText, onSubmit }) => (
 );
 
 InlineForm.propTypes = {
+  inputName: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired
 };

@@ -4,7 +4,10 @@ import InlineForm from './components/InlineForm';
 function App() {
   return (
     <div className="container py-5">
-      <InlineForm buttonText="Search" />
+      <InlineForm
+        inputName="q"
+        buttonText="Search"
+      />
     </div>
   );
 }
